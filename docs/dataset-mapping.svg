@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Dataset to notebook mapping</title>
+  <desc id="desc">The Advertising, Iris, and preprocessing datasets mapped to the notebooks that use them.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#312e81"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c4b5fd"/></marker></defs>
+  <rect width="1200" height="560" rx="28" fill="url(#bg)"/>
+  <text x="55" y="68" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="700">Dataset → notebook map</text>
+  <text x="55" y="102" fill="#ddd6fe" font-family="Arial, sans-serif" font-size="17">The same datasets support different modelling lessons.</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <rect x="55" y="155" width="255" height="300" rx="18" fill="#dbeafe"/><text x="80" y="198" fill="#1e3a8a" font-size="23" font-weight="700">data/</text><text x="80" y="235" fill="#1e40af" font-weight="700">Advertising.csv</text><text x="80" y="262" fill="#1e40af">TV · Radio · Newspaper</text><text x="80" y="286" fill="#1e40af">Sales target</text><text x="80" y="330" fill="#1e40af" font-weight="700">Data.csv</text><text x="80" y="357" fill="#1e40af">Customer preprocessing</text><text x="80" y="401" fill="#1e40af" font-weight="700">iris.data</text><text x="80" y="428" fill="#1e40af">Flower measurements</text>
+    <path d="M320 225 C380 225 380 190 440 190" fill="none" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/><path d="M320 350 C380 350 380 350 440 350" fill="none" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/><path d="M320 415 C380 415 380 475 440 475" fill="none" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="445" y="140" width="300" height="105" rx="16" fill="#f5f3ff"/><text x="470" y="177" fill="#4c1d95" font-size="20" font-weight="700">Advertising notebooks</text><text x="470" y="207" fill="#5b21b6">Regression · gradient descent</text><text x="470" y="230" fill="#5b21b6">Scaling · model comparison</text>
+    <rect x="445" y="300" width="300" height="105" rx="16" fill="#f5f3ff"/><text x="470" y="337" fill="#4c1d95" font-size="20" font-weight="700">Preprocessing notebook</text><text x="470" y="367" fill="#5b21b6">Imputation · encoding</text><text x="470" y="390" fill="#5b21b6">Splitting · feature scaling</text>
+    <rect x="445" y="460" width="300" height="55" rx="16" fill="#f5f3ff"/><text x="470" y="495" fill="#4c1d95" font-size="20" font-weight="700">Iris notebooks</text>
+    <path d="M755 192 H810" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/><path d="M755 352 H810" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/><path d="M755 487 H810" stroke="#c4b5fd" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="815" y="140" width="330" height="105" rx="16" fill="#ede9fe"/><text x="840" y="177" fill="#4c1d95" font-weight="700">Key questions</text><text x="840" y="207" fill="#5b21b6">Which channel predicts Sales?</text><text x="840" y="230" fill="#5b21b6">Does scaling improve convergence?</text>
+    <rect x="815" y="300" width="330" height="105" rx="16" fill="#ede9fe"/><text x="840" y="337" fill="#4c1d95" font-weight="700">Key questions</text><text x="840" y="367" fill="#5b21b6">How should raw data be prepared?</text><text x="840" y="390" fill="#5b21b6">What information must stay hidden?</text>
+    <rect x="815" y="460" width="330" height="55" rx="16" fill="#ede9fe"/><text x="840" y="495" fill="#4c1d95" font-weight="700">Regression and classification</text>
+  </g>
+</svg>

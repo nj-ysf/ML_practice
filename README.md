@@ -1,35 +1,89 @@
-# Machine Learning Algorithms
+# ML Practice
 
-A collection of hands-on machine-learning notebooks covering data preprocessing, exploratory analysis, linear regression from scratch, gradient descent, feature scaling, and introductory classification.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-models-F7931E?logo=scikit-learn&logoColor=white)
+![Status](https://img.shields.io/badge/status-learning%20portfolio-0f766e)
 
-The notebooks are educational experiments rather than a packaged Python library. They show the mathematics behind common models and compare implementations written with NumPy against scikit-learn.
+Hands-on machine-learning practice covering data preparation, exploratory analysis, linear regression from scratch, gradient descent, feature scaling, and introductory classification.
 
-## Contents
+The notebooks make the reasoning visible: understand the formula, implement the algorithm with NumPy, visualise what happened, and compare the result with a trusted library implementation.
 
-| Notebook | Topic |
-| --- | --- |
-| `advertising_linear_regression_gradient_descent.ipynb` | Univariate advertising regression with a custom gradient-descent implementation |
-| `advertising_regression_from_scratch.ipynb` | Three separate advertising regressions: TV, Radio, and Newspaper versus Sales |
-| `data_preprocessing_workflow.ipynb` | Missing values, categorical encoding, train/test splitting, and feature scaling |
-| `iris_regression_gradient_descent.ipynb` | Predicting Iris petal width from petal length with gradient descent |
-| `multiple_linear_regression_from_scratch.ipynb` | Multiple linear regression using NumPy and scikit-learn |
-| `tp3_multiple_linear_regression.ipynb` | Advertising-sales regression, visualisation, and model comparison |
-| `tp4_multiple_linear_regression_scaling.ipynb` | Standardised multiple regression and convergence analysis |
-| `iris_classification_and_torch_regression.ipynb` | Exploratory Iris classification plus an experimental PyTorch regression section |
+![Learning path](docs/learning-path.svg)
 
-## Data
+## What this repository teaches
 
-The `data/` directory contains the datasets used by the notebooks:
+- How raw tabular data is inspected, cleaned, encoded, split, and scaled.
+- How linear regression can be implemented with matrix operations.
+- How gradient descent minimises a cost function step by step.
+- Why feature scaling affects optimisation and convergence.
+- How to evaluate regression with MSE and $R^2$.
+- How to evaluate classification with accuracy, confusion matrices, and reports.
+- How a from-scratch implementation compares with scikit-learn.
 
-- `Advertising.csv` — TV, Radio, and Newspaper advertising budgets with Sales.
-- `Data.csv` — a small preprocessing example with Country, Age, Salary, and Purchased.
-- `iris.data` / `bezdekIris.data` — the classic Iris dataset in UCI format.
-- `diabetes.csv`, `titanic.csv`, `tips.csv`, and `US-pumpkins.csv` — additional practice datasets.
-- `iris.names` and `Index` — metadata distributed with the Iris dataset.
+## Notebook map
 
-Some notebooks were originally created in Google Colab or Kaggle and retain absolute paths such as `/content/...` or `../input/...`. Update those paths to `data/<filename>` before executing them locally. The notebooks are intentionally preserved as coursework artifacts; see [`docs/PROJECT_REVIEW.md`](docs/PROJECT_REVIEW.md) for the remaining technical notes.
+| Notebook | Main question | Techniques |
+| --- | --- | --- |
+| [`data_preprocessing_workflow.ipynb`](data_preprocessing_workflow.ipynb) | How do we prepare imperfect data? | Imputation, one-hot encoding, label encoding, train/test split, Min–Max and standard scaling |
+| [`advertising_linear_regression_gradient_descent.ipynb`](advertising_linear_regression_gradient_descent.ipynb) | Which single advertising channel relates to Sales? | Univariate regression, custom gradient descent, cost curves |
+| [`advertising_regression_from_scratch.ipynb`](advertising_regression_from_scratch.ipynb) | How do TV, Radio, and Newspaper compare independently? | NumPy model, MSE, $R^2$, fitted-line visualisation |
+| [`multiple_linear_regression_from_scratch.ipynb`](multiple_linear_regression_from_scratch.ipynb) | Can several channels predict Sales together? | Multiple regression, bias column, scikit-learn comparison |
+| [`tp3_multiple_linear_regression.ipynb`](tp3_multiple_linear_regression.ipynb) | Does the hand-built model agree with a reference model? | 3D visualisation, gradient descent, MSE, $R^2$ |
+| [`tp4_multiple_linear_regression_scaling.ipynb`](tp4_multiple_linear_regression_scaling.ipynb) | Why does standardisation help gradient descent? | Z-score scaling, convergence analysis, model comparison |
+| [`iris_regression_gradient_descent.ipynb`](iris_regression_gradient_descent.ipynb) | Can petal width be predicted from petal length? | Simple regression on the Iris dataset |
+| [`iris_classification_and_torch_regression.ipynb`](iris_classification_and_torch_regression.ipynb) | How do classical classifiers and a neural model behave? | Logistic regression, KNN, SVM, trees, MLP, PyTorch experiment |
+| [`legacy_colab_experiment.ipynb`](legacy_colab_experiment.ipynb) | What did the earlier exploration look like? | Archived Colab experiments and intermediate model trials |
 
-## Setup
+## Dataset mapping
+
+![Dataset mapping](docs/dataset-mapping.svg)
+
+| Dataset | Used for | Related notebooks |
+| --- | --- | --- |
+| [`data/Advertising.csv`](data/Advertising.csv) | Advertising budgets and Sales | All advertising-regression notebooks |
+| [`data/Data.csv`](data/Data.csv) | Missing values and categorical variables | `data_preprocessing_workflow.ipynb` |
+| [`data/iris.data`](data/iris.data) | Iris measurements and species | Iris regression and classification notebooks |
+| [`data/diabetes.csv`](data/diabetes.csv) | Additional tabular practice | Available for extension |
+| [`data/titanic.csv`](data/titanic.csv) | Additional classification practice | Available for extension |
+| [`data/tips.csv`](data/tips.csv) | Additional exploratory-analysis practice | Available for extension |
+| [`data/US-pumpkins.csv`](data/US-pumpkins.csv) | Larger mixed-type dataset | Available for extension |
+
+## Mathematical toolkit
+
+For a linear model, the prediction is:
+
+$$
+\hat{y}=X\theta
+$$
+
+The notebooks minimise the half mean-squared error:
+
+$$
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)}-y^{(i)})^2
+$$
+
+The gradient-descent update is:
+
+$$
+\theta\leftarrow\theta-\alpha\frac{1}{m}X^T(X\theta-y)
+$$
+
+Regression quality is measured with MSE and the coefficient of determination:
+
+$$
+\mathrm{MSE}=\frac{1}{m}\sum_i(y_i-\hat{y}_i)^2,
+\qquad
+R^2=1-\frac{\sum_i(y_i-\hat{y}_i)^2}{\sum_i(y_i-\bar{y})^2}
+$$
+
+When scaling is required, standardisation uses training-set statistics only:
+
+$$
+z=\frac{x-\mu_{train}}{\sigma_{train}}
+$$
+
+## Quick start
 
 Python 3.10+ is recommended.
 
@@ -41,21 +95,20 @@ python -m venv .venv
 # source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-```
-
-Launch Jupyter from the repository root so relative paths resolve consistently:
-
-```bash
 jupyter lab
 ```
 
-## Reproducibility notes
+Run Jupyter from the repository root so paths such as `data/Advertising.csv` resolve correctly.
+
+## Reproducibility and quality notes
 
 - Most train/test splits use `random_state=42`.
-- The notebooks use both custom gradient descent and scikit-learn reference models.
-- Notebook outputs are retained where they document the original work; rerun notebooks after correcting their data paths.
-- The PyTorch notebook assumes a CUDA device in its experimental section and may require changing the device to `cpu`.
+- Dependencies are listed in [`requirements.txt`](requirements.txt).
+- The PyTorch experiment automatically falls back to CPU when CUDA is unavailable.
+- External hot-linked notebook images were removed; the notebooks are now portable for GitHub viewing.
+- Existing outputs document the original coursework, but selected notebooks should be rerun from a clean environment before presenting results.
+- Full findings and remaining technical caveats are recorded in [`docs/PROJECT_REVIEW.md`](docs/PROJECT_REVIEW.md).
 
-## Repository status
+## License and data note
 
-This repository is prepared as a learning portfolio. Before publishing, review notebook outputs for accidental personal information, rerun the selected notebooks from a clean environment, and commit only the notebooks and datasets that you intend to share.
+This is a personal learning portfolio. Check the original license and attribution requirements for any dataset before redistributing it outside this repository.
