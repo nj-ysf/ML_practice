@@ -1,0 +1,11 @@
+Age,Tenure,MonthlyCharges,TotalCharges,ContractType,Churn
+23,1,29.85,29.85,Month-to-month,0
+45,34,56.95,1889.5,One year,0
+31,2,53.85,108.15,Month-to-month,1
+54,56,42.3,2320.5,Two year,0
+37,8,70.7,542.4,Month-to-month,1
+28,22,99.65,1970.7,One year,0
+67,60,89.1,5360.9,Two year,0
+33,6,29.75,186.15,Month-to-month,1
+41,11,45.0,484.5,One year,0
+38,4,80.1,320.4,Month-to-month,1
